@@ -1,14 +1,10 @@
 spring:
   application:
-    name: helloservice
+    name: helpservice
 
 server:
   port: 8080
-
-
-helloservice:
-  greet:
-    msg: ${GREET_MSG:'Good Evening!'}     
+   
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
