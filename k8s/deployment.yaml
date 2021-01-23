@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helpservice
+  labels:
+    app: spring-boot-k8s-help
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-k8s-help
+  template:
+    metadata:
+      labels:
+        app: spring-boot-k8s-help
+    spec:
+      containers:
+      - name: help-service
+        image: help-service
+        imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helpservice-svc
+  labels:
+    app: spring-boot-k8s-help
+spec:
+  type: NodePort
+  ports:
+  - port: 31235
+    nodePort: 30124
+    targetPort: 8081
+    protocol: TCP
+    name: http
+  selector:
+    app: spring-boot-k8s-help
