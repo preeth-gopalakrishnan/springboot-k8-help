@@ -1,5 +1,7 @@
 package com.example.k8.helpservice.controller;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,9 @@ public class HelpController {
 	@Value("${helpservice.greet.msg}") 
 	private String msg;
 	
+	@Value("${helpservice.reset.key}") 
+	private String secretKey;
+	
 	@Autowired
 	private HelloServiceClient client;
 	
@@ -25,4 +30,14 @@ public class HelpController {
 		String greetMsg = client.sayHello(name);
 		return greetMsg +"\n"+msg;
 	}
+	
+	@GetMapping(value = "/reset/{name}/{key}")
+	@ResponseBody()
+	public String reset(@PathVariable String name, @PathVariable String key) {
+		if (key.equalsIgnoreCase(secretKey)){
+			return msg +"\n"+UUID.randomUUID();
+		}
+		return msg +"\n"+ "unknown key";
+		
+	}	
 }

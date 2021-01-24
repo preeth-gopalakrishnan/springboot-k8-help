@@ -6,4 +6,6 @@ data:
   application.yaml: |-
     helpservice:
       greet:
-        msg: What can i do for you today?     
+        msg: What can i do for you today?
+      reset:
+        key: secret
