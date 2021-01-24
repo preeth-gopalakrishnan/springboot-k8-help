@@ -28,14 +28,14 @@ spec:
           httpGet:
             path: /actuator/health
             port: 8081
-          initialDelaySeconds: 3
+          initialDelaySeconds: 10
           periodSeconds: 2
           failureThreshold: 3
         livenessProbe:
           httpGet:
             path: /actuator/health
             port: 8081
-          initialDelaySeconds: 5
+          initialDelaySeconds: 10
           periodSeconds: 5
           failureThreshold: 3
 ---
@@ -47,6 +47,8 @@ metadata:
     app: spring-boot-k8s-help
 spec:
   type: NodePort
+  externalIPs:
+  - 65.1.64.55  
   ports:
   - port: 31235
     nodePort: 30124
