@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients (basePackages="com.example.k8.helpservice.interconnect")
 public class HelpserviceApplication {
 
 	public static void main(String[] args) {

@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@FeignClient(value="helloservice")
+@FeignClient(value="helloservice", url="helloservice")
 public interface HelloServiceClient {
 	
 	@GetMapping(value = "/greet/{name}")
 	@ResponseBody()
-	public String sayHello(@PathVariable final String name);
+	public String sayHello(@PathVariable("name") final String name);
 
 }

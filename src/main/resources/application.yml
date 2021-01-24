@@ -2,8 +2,13 @@ spring:
   application:
     name: helpservice
 
+
 server:
   port: 8081
+
+helpservice:
+  greet:
+    msg: Not initialized.     
    
 logging:
   pattern: 
