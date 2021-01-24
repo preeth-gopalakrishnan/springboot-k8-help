@@ -1,8 +1,15 @@
 spring:
   application:
     name: helpservice
-
-
+  cloud:
+    kubernetes:
+      config:
+        enabled: true
+        name: helpservice
+      reload:
+        enabled: true
+        mode: event
+        strategy: refresh
 server:
   port: 8081
 
