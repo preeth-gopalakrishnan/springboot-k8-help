@@ -8,7 +8,7 @@ server:
 
 helpservice:
   greet:
-    msg: Not initialized.     
+    msg: Not initialized.
    
 logging:
   pattern: 
