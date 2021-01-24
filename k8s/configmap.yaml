@@ -7,3 +7,8 @@ data:
     helpservice:
       greet:
         msg: What can i do for you today?     
+    spring:
+      cloud:
+        loadbalancer:
+          ribbon:
+            enable: false
