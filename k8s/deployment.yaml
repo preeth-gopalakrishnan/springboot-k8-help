@@ -22,7 +22,7 @@ spec:
         - name: RESET_KEY
           valueFrom:
             secretKeyRef:
-              name: helpserviceResetSecret
+              name: helpservice-reset-secret
               key: reset-key
         readinessProbe:
           httpGet:
