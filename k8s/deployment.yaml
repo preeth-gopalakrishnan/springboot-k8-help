@@ -18,6 +18,12 @@ spec:
       - name: help-service
         image: help-service
         imagePullPolicy: Never
+        env:
+        - name: RESET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: helpserviceResetSecret
+              key: reset-key
 ---
 apiVersion: v1
 kind: Service

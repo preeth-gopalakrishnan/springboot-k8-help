@@ -9,7 +9,8 @@ server:
 helpservice:
   greet:
     msg: Not initialized.
-   
+  reset:
+    key: ${RESET_KEY:default}   
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"

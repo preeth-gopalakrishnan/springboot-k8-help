@@ -7,5 +7,3 @@ data:
     helpservice:
       greet:
         msg: What can i do for you today?
-      reset:
-        key: secret
